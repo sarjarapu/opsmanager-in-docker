@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  appdb:
+    image: mongo:4.2
+    container_name: mongodb-appdb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: superuser
+      MONGO_INITDB_ROOT_PASSWORD: superpass
+    volumes:
+      - appdb-data:/data/db
+    ports:
+      - 27000:27017
+  opsmanager:
+    build: ./opsmanager
+    image: opsmanager:4.2-v12
+    container_name: opsmanager
+    privileged: true
+    depends_on:
+      - appdb
+    ports:
+      - "8888:8080"
+    volumes:
+      - mms-log:/opt/mongodb/mms/logs
+volumes:
+  appdb-data:
+  mms-log:
