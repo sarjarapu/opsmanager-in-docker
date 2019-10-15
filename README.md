@@ -1,10 +1,10 @@
 # Ops Manager in Docker Containers
 
-> CAUTION: Do not use this `Production` environment. This option is not supported by the Technical Support Engineers of MongoDB
+> CAUTION: Do not use this in your `Production` environment. These custom built docker images/containers will not be supported by the MongoDB Technical Support Engineers.
 
 ## How to run
 
-Deploy the Ops Manager in a docker containers using the following commands. The process usually takes about 4-5 min for the initialization of the Ops Manager for the very first time.
+To deploy the Ops Manager in a docker containers using the following commands. The process usually takes about 4-5 min for initialization of the Ops Manager for the very first time.
 
 ```bash
 docker-compose build
